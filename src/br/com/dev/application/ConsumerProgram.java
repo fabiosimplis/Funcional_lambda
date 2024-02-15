@@ -5,6 +5,7 @@ import br.com.dev.util.PriceUpdate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ConsumerProgram {
     public static void main(String[] args) {
@@ -18,7 +19,11 @@ public class ConsumerProgram {
 
         //Fazer programa qua aumente o valor do produto em 10%
 
-        list.forEach(Product::nonStaticPriceUpdate);
+        double factor = 1.1;
+
+        Consumer<Product> cons = p -> p.setPrice(p.getPrice() * 1.1);
+
+        list.forEach(cons);
 
         list.forEach(System.out::println);
     }
