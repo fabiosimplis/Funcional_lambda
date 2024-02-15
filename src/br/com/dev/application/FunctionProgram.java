@@ -17,7 +17,7 @@ public class FunctionProgram {
         list.add(new Product("Tablet", 350.50));
         list.add(new Product("HD Case", 80.90));
 
-        List<String> resultList = list.stream().map(new UpperCaseName()).collect(Collectors.toList());
+        List<String> resultList = list.stream().map(Product::staticUpperCaseName).collect(Collectors.toList());
 
         resultList.forEach(System.out::println);
 
