@@ -18,7 +18,7 @@ public class ConsumerProgram {
 
         //Fazer programa qua aumente o valor do produto em 10%
 
-        list.forEach(Product::staticPriceUpdate);
+        list.forEach(Product::nonStaticPriceUpdate);
 
         list.forEach(System.out::println);
     }
