@@ -3,7 +3,6 @@ package br.com.dev.application;
 import br.com.dev.entities.Product;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -16,7 +15,7 @@ public class Program {
         list.add(new Product("LapTop", 1200.00));
         list.add(new Product("Tablet", 500.00));
 
-        Collections.sort(list);
+        list.sort(new MyComparator());
 
         for (Product p: list) {
             System.out.println(p);
