@@ -1,4 +1,4 @@
-package br.com.dev.application;
+package br.com.dev.util;
 
 import br.com.dev.entities.Product;
 
