@@ -20,7 +20,7 @@ public class PredicateProgram {
         //Utilizando a interface implemantada
         //list.removeIf(new ProductPredicate());
         //Referencia para método = Product::staticProductPredicate
-        list.removeIf(Product::staticProductPredicate);
+        list.removeIf(Product::nonStaticProductPredicate);
 
 
         for(Product p: list){
