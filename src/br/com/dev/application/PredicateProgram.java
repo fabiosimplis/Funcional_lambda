@@ -17,8 +17,11 @@ public class PredicateProgram {
 
         //Remover todos que tenham preço acima de 100
         //list.removeIf(p -> p.getPrice() >= 100);
+        //Utilizando a interface implemantada
+        //list.removeIf(new ProductPredicate());
+        //Referencia para método = Product::staticProductPredicate
+        list.removeIf(Product::staticProductPredicate);
 
-        list.removeIf(new ProductPredicate());
 
         for(Product p: list){
             System.out.println(p);
