@@ -21,9 +21,9 @@ public class PredicateProgram {
         //Utilizando a interface implemantada
         //list.removeIf(new ProductPredicate());
 
-        Predicate<Product> pred = p -> p.getPrice() >= 100.0;
+        double min = 100.0;
 
-        list.removeIf(pred);
+        list.removeIf(p -> p.getPrice() >= min);
 
         for(Product p: list){
             System.out.println(p);
