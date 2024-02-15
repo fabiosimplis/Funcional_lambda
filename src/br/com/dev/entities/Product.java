@@ -36,12 +36,12 @@ public class Product {
     public boolean nonStaticProductPredicate(){
         return price >= 100.0;
     }
+
     @Override
     public String toString() {
-        return "Product [" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                " ]";
+        return "Product " +
+                "name = " + name + "; " +
+                String.format("price = %.2f", price);
     }
 
 }
