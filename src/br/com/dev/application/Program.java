@@ -3,6 +3,7 @@ package br.com.dev.application;
 import br.com.dev.entities.Product;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -15,7 +16,15 @@ public class Program {
         list.add(new Product("LapTop", 1200.00));
         list.add(new Product("Tablet", 500.00));
 
-        list.sort(new MyComparator());
+        Comparator comp = new Comparator<Product>() {
+            @Override
+            public int compare(Product p1, Product p2) {
+                return p1.getName().compareToIgnoreCase(p2.getName());
+            }
+        };
+
+
+        list.sort(comp);
 
         for (Product p: list) {
             System.out.println(p);
