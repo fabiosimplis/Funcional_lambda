@@ -16,14 +16,8 @@ public class Program {
         list.add(new Product("LapTop", 1200.00));
         list.add(new Product("Tablet", 500.00));
 
-        Comparator<Product> comp =
-                new Comparator<>() {
-            @Override
-            public int compare(Product p1, Product p2) {
-                return p1.getName().compareToIgnoreCase(p2.getName());
-            }
-        };
-
+        Comparator<Product> comp = (p1, p2) ->
+                p1.getName().compareToIgnoreCase(p2.getName());
 
         list.sort(comp);
 
