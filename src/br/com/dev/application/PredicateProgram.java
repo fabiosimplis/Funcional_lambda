@@ -5,6 +5,7 @@ import br.com.dev.util.ProductPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class PredicateProgram {
     public static void main(String[] args) {
@@ -19,9 +20,10 @@ public class PredicateProgram {
         //list.removeIf(p -> p.getPrice() >= 100);
         //Utilizando a interface implemantada
         //list.removeIf(new ProductPredicate());
-        //Referencia para método = Product::staticProductPredicate
-        list.removeIf(Product::nonStaticProductPredicate);
 
+        Predicate<Product> pred = p -> p.getPrice() >= 100.0;
+
+        list.removeIf(pred);
 
         for(Product p: list){
             System.out.println(p);
